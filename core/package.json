@@ -6,8 +6,8 @@
     "author": "Andrew Courtice <andrewcourtice@users.noreply.github.com>",
     "description": "Simple, unopinionated, lightweight and extensible state management for Vue 3",
     "homepage": "https://harlemjs.com",
-    "main": "src/index.ts",
-    "module": "src/index.ts",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
     "unpkg": "dist/harlem.min.js",
     "types": "dist/index.d.ts",
     "source": "src/index.ts",
@@ -26,7 +26,7 @@
     },
     "scripts": {
         "dev": "microbundle watch --raw",
-        "build": "node build.js",
+        "build": "tsup src/index.ts --dts --sourcemap --format cjs,esm",
         "prepublish": "yarn build"
     },
     "peerDependencies": {
@@ -34,6 +34,7 @@
     },
     "devDependencies": {
         "@harlem/build": "^1.2.3",
+        "tsup": "^4.8.21",
         "vue": "^3.0.0"
     }
 }
